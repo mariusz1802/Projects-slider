@@ -1,0 +1,46 @@
+$myFont: Helvetica, sans-serif;
+$fontColor: white;
+$bgColor: black;
+
+body {
+  background: $bgColor;
+  color: $fontColor;
+}
+
+.image-container {
+  margin: auto;
+  position: relative;
+  background: red;
+  width: 70%;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.dots-container {
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translate(-50%, -50%);
+}
+
+.dot {
+  height: 20px;
+  width: 20px;
+  background-color: rgb(210, 210, 210);
+  border-radius: 50%;
+  display: inline-block;
+  margin: 2px;
+  transition: 0.4s all;
+}
+.dot:hover {
+  cursor: pointer;
+  background: plum;
+}
