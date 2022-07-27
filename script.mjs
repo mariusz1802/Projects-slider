@@ -2,32 +2,21 @@ import myJson from "./data.json" assert { type: "json" };
 
 const imageContainer = document.querySelector(".image-container");
 
-function getAttributes() {
-  myJson.map((el) => {
-    const attributes = {
-      name: `${el.name}`,
-      alt: `${el.name}`,
-      url: `${el.url}`,
-    };
-
-    return attributes;
-  });
-}
-
-function setAttributes(element, attributes) {
-  Object.keys(attributes).forEach((attr) => {
-    element.setAttribute(attr, attributes[attr]);
-  });
-}
-
 function sliderCreator() {
-  const slider = document.createElement("img");
-  // slider.setAttribute("src", `${el.url}`);
-  // slider.setAttribute("alt", `${el.name}`);
-  // slider.setAttribute("id", `${el.name}`);
-  slider.classList.add("image");
-  setAttributes(slider, getAttributes);
-
-  return imageContainer.appendChild(slider);
+  myJson.map((el, index) => {
+    const slider = document.createElement("img");
+    slider.setAttribute("src", `${el.url}`);
+    slider.setAttribute("alt", `${el.name}`);
+    slider.setAttribute("id", `${el.name}`);
+    slider.setAttribute("z-index", `${index}`);
+    slider.classList.add("image");
+    return imageContainer.appendChild(slider);
+  });
 }
 sliderCreator();
+
+const btns = document.getElementsByClassName("dot");
+
+for (let i = 0; i < btns.length; i += 1) {
+  btns[i].addEventListener("click", () => {});
+}
