@@ -20,7 +20,7 @@ body {
 }
 
 .dots-container {
-  z-index: 2;
+  z-index: 12;
   position: absolute;
   left: 50%;
   bottom: 20px;
@@ -36,6 +36,9 @@ body {
   margin: 2px;
   transition: 0.4s all;
 }
+.dot.active {
+  background: plum;
+}
 
 .dot:hover {
   cursor: pointer;
@@ -48,7 +51,6 @@ body {
 
 .active {
   z-index: 10;
-  opacity: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */
