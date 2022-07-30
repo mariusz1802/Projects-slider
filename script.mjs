@@ -27,16 +27,16 @@ function changePhoto() {
     btns[i].addEventListener("click", () => {
       const selectedSlider = document.getElementsByClassName("image")[i];
       const selectedButton = document.getElementsByClassName("dot")[i];
-      const previousSlider = document.getElementsByClassName("image")[i];
 
-      sliders.forEach((slider) => slider.classList.remove("active"));
+      sliders.forEach((slider) => {
+        slider.classList.remove("active");
+        slider.style.display = "none";
+      });
       btns.forEach((btn) => btn.classList.remove("active"));
       selectedSlider.classList.add("active");
       selectedSlider.classList.add("previous");
-      if (document.querySelectorAll(".previous").length > 1) {
-        console.log("dwie");
-      }
       selectedButton.classList.add("active");
+      selectedButton.style.display = "block";
     });
   }
 }
