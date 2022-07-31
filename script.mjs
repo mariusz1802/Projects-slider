@@ -9,9 +9,9 @@ function createSlider() {
     slider.setAttribute("src", `${el.url}`);
     slider.setAttribute("alt", `${el.name}`);
     slider.setAttribute("id", `${el.name}`);
-    slider.classList.add("image");
 
-    if (index == 0) {
+    slider.classList.add("image");
+    if (index === 0) {
       slider.classList.add("active");
     }
     return imageContainer.appendChild(slider);
@@ -28,15 +28,11 @@ function changePhoto() {
       const selectedSlider = document.getElementsByClassName("image")[i];
       const selectedButton = document.getElementsByClassName("dot")[i];
 
-      sliders.forEach((slider) => {
-        slider.classList.remove("active");
-        slider.style.display = "none";
-      });
+      sliders.forEach((slider) => slider.classList.remove("active", "fadeIn"));
       btns.forEach((btn) => btn.classList.remove("active"));
-      selectedSlider.classList.add("active");
-      selectedSlider.classList.add("previous");
+
+      selectedSlider.classList.add("active", "fadeIn");
       selectedButton.classList.add("active");
-      selectedButton.style.display = "block";
     });
   }
 }
