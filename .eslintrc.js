@@ -11,6 +11,8 @@ module.exports = {
   },
   plugins: ['@typescript-eslint'],
   rules: {
-    semi: ['error', 'always'],
+    singleQuote: 1,
+    semi: 1,
+    trailingComma: 2,
   },
-};
+}
